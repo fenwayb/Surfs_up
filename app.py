@@ -14,7 +14,7 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 Measurement = Base.classes.measurement
-Station = Base.classes.station\
+Station = Base.classes.station
 
 session = Session(engine)
 
@@ -69,4 +69,3 @@ def stats(start=None, end=None):
         filter(Measurement.date >= start).\
         filter(Measurement.date <= end).all()
     temps = list(np.ravel(results))
-    return jsonify(temps)
